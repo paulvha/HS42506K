@@ -1,0 +1,49 @@
+﻿Depending on the library you want to use either first install BCM2835 library or the wiringPI.
+
+wiringPi library
+
+1. cd /home/pi 
+2. git clone git://git.drogon.net/wiringPi
+
+3. #make the utilities
+4. cd wiringPi
+5. ./build
+
+6. #to copy the library to the right place !!!! important !!!!
+
+7. cd wiringPi
+8. make static
+9. sudo make install-static
+
+….OR...
+HS420561K – 4 X7 LED DRIVER
+
+Library to display a single character, a string of characters,  blinking, moving on the digits.
+I has example code that can be used and refined. Detailed documentation in the included .odt.
+ 
+
+BCM2835 library
+Install latest from BCM2835 from : http://www.airspayce.com/mikem/bcm2835/
+
+1. wget http://www.airspayce.com/mikem/bcm2835/bcm2835-1.50.tar.gz
+2. tar -zxf bcm2835-1.50.tar.gz		// 1.50 was version number at the time of writting
+3. cd bcm2835-1.50
+4. ./configure
+5. sudo make check
+6. sudo make install
+
+
+Install the HS42 utilities
+1. cd /home/pi
+
+2. tar -xzvf hs42led.tar.gz
+
+3. cd  hs42led
+
+	To use the BCM2835 :  ./build_led bcm
+		
+			OR
+
+	To use the wiringPI library : ./build_led pi
+
+./testled will start ONE of the examples: ask for a your string to display and will show that rolling on the display
